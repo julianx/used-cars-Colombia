@@ -6,6 +6,7 @@ Based on [ToS](https://www.mercadolibre.com.co/ayuda/terminos-condiciones-de-uso
 ```
 git clone https://github.com/julianx/used-cars-Colombia.git
 cd used-cars-Colombia/tucarro
+pip -i requirements.txt
 scrapy crawl tuCarroScrapper -o out_file.json
 ```
 

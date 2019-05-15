@@ -14,7 +14,7 @@ class BlogSpider(scrapy.Spider):
     def parse_grid(self, response):
         for item in response.css('#results-section .results-item .rowItem > a'):
             yield response.follow(url=item, callback=self.parse_car)
-        next_page = response.css('.pagination__page--current + li.pagination__page a::attr(href)').extract_first()
+        next_page = response.css('.andes-pagination__button--current + li.andes-pagination__button a::attr(href)').extract_first()
         if next_page:
             yield response.follow(url=next_page, callback=self.parse_grid, meta={'dont_cache': True})
 
